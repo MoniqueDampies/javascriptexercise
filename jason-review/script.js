@@ -68,92 +68,133 @@ length: 5
 
 
 // PRIMITIVES
-let name = "Jason"; // String
-let age = 28; // number
-let isPensioner = false; // Boolean
-let canDance; // Undefined
-let awards = null; // Null
+// let name = "Jason"; // String
+// let age = 28; // number
+// let isPensioner = false; // Boolean
+// let canDance; // Undefined
+// let awards = null; // Null
 
 // Reference Types
 
 // Object
-const person = {
-  name: "Jason",
-  age: 28,
-  isPensioner: false,
-};
+// const person = {
+//   name: "Jason",
+//   age: 28,
+//   isPensioner: false,
+// };
 
-console.log(person);
+// console.log(person);
 
 // Array
-const projects = [
-  {
-    title: "Project 1",
-    imgURL: "https://picsum.photos/200/300?random=1",
-    description: "Lorem ipsum",
-    technologies: "HTML/CSS/JS",
-    links: {
-      github: "Link",
-      live: "Link",
-    },
-  },
-  {
-    title: "Project 2",
-    imgURL: "https://picsum.photos/200/300?random=2",
-    description: "Lorem ipsum",
-    technologies: "HTML/CSS/JS",
-    links: {
-      github: "Link",
-      live: "Link",
-    },
-  },
-  {
-    title: "Project 3",
-    imgURL: "https://picsum.photos/200/300?random=3",
-    description: "Lorem ipsum",
-    technologies: "HTML/CSS/JS",
-    links: {
-      github: "Link",
-      live: "Link",
-    },
-  },
-  {
-    title: "Project 4",
-    imgURL: "https://picsum.photos/200/300?random=4",
-    description: "Lorem ipsum",
-    technologies: "HTML/CSS/JS",
-    links: {
-      github: "Link",
-      live: "Link",
-    },
-  },
-  {
-    title: "Project 5",
-    imgURL: "https://picsum.photos/200/300?random=5",
-    description: "Lorem ipsum",
-    technologies: "HTML/CSS/JS",
-    links: {
-      github: "Link",
-      live: "Link",
-    },
-  },
-  {
-    title: "Project 6",
-    imgURL: "https://picsum.photos/200/300?random=6",
-    description: "Lorem ipsum",
-    technologies: "HTML/CSS/JS",
-    links: {
-      github: "Link",
-      live: "Link",
-    },
-  },
-];
+// const projects = [
+//   {
+//     title: "Project 1",
+//     imgURL: "https://picsum.photos/200/300?random=1",
+//     description: "Lorem ipsum",
+//     technologies: "HTML/CSS/JS",
+//     links: {
+//       github: "Link",
+//       live: "Link",
+//     },
+//   },
+//   {
+//     title: "Project 2",
+//     imgURL: "https://picsum.photos/200/300?random=2",
+//     description: "Lorem ipsum",
+//     technologies: "HTML/CSS/JS",
+//     links: {
+//       github: "Link",
+//       live: "Link",
+//     },
+//   },
+//   {
+//     title: "Project 3",
+//     imgURL: "https://picsum.photos/200/300?random=3",
+//     description: "Lorem ipsum",
+//     technologies: "HTML/CSS/JS",
+//     links: {
+//       github: "Link",
+//       live: "Link",
+//     },
+//   },
+//   {
+//     title: "Project 4",
+//     imgURL: "https://picsum.photos/200/300?random=4",
+//     description: "Lorem ipsum",
+//     technologies: "HTML/CSS/JS",
+//     links: {
+//       github: "Link",
+//       live: "Link",
+//     },
+//   },
+//   {
+//     title: "Project 5",
+//     imgURL: "https://picsum.photos/200/300?random=5",
+//     description: "Lorem ipsum",
+//     technologies: "HTML/CSS/JS",
+//     links: {
+//       github: "Link",
+//       live: "Link",
+//     },
+//   },
+//   {
+//     title: "Project 6",
+//     imgURL: "https://picsum.photos/200/300?random=6",
+//     description: "Lorem ipsum",
+//     technologies: "HTML/CSS/JS",
+//     links: {
+//       github: "Link",
+//       live: "Link",
+//     },
+//   },
+// ];
 
-const projectContainer = document.getElementById("projects");
+// const projectContainer = document.getElementById("projects");
 
-projects.forEach((project) => {
-  projectContainer.innerHTML += `
-    <h3>${project.title}</h3>
-    <img src=${project.imgURL} />
-  `;
+// projects.forEach((project) => {
+//   projectContainer.innerHTML += `
+//     <h3>${project.title}</h3>
+//     <img src=${project.imgURL} />
+//   `;
+// });
+
+
+// function numberOne(){
+//   document.getElementById("output").innerHTML = 1;
+// }
+
+// function numberTwo(){
+//   document.getElementById("output").innerHTML = 2;
+// }
+// function numberThree(){
+//   document.getElementById("output").innerHTML = 3;
+// }
+
+'use strict';
+const container = document.querySelector('.container');
+const textarea = document.querySelector('.text');
+const alphabet = document.querySelectorAll('.alpha');
+const key = document.querySelectorAll('.key');
+
+
+//Event listener
+container.addEventListener('click', function (e) {
+  if (e.target.classList.contains('key')) {
+    if (e.target.classList.contains('spaceBar')) {
+      textarea.textContent += ' ';
+    }
+    if (e.target.classList.contains('caps')) {
+      caps();
+    }
+    if (e.target.classList.contains('content')) {
+      const getContent = e.target.textContent;
+      textarea.textContent += getContent;
+    }
+    if (e.target.classList.contains('backSpace')) {
+      textarea.textContent = textarea.textContent.substring(
+        0,
+        textarea.textContent.length - 1
+      );
+    }
+  }
 });
